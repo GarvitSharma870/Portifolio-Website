@@ -1,0 +1,539 @@
+:root{
+    --primary: lightgreen;
+}
+/* hero-section starts */
+.hero-section{
+    background: url("/images/hero-bg.png");
+    background-attachment: fixed;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.hero-section .logo{
+    animation: topToBot 0.5s ease 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    transform: scale(0,0);
+}
+.hero-section .hero-content{
+    animation: botToTop 0.5s ease 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    transform: scale(0,0);
+}
+.container > p{
+    color: grey;
+}
+@keyframes topToBot {
+    from{
+        transform: translateY(-80%) scale(0,0);
+    }
+    to{
+        transform: translateY(0) scale(1,1);
+        opacity: 1;
+    }
+}
+@keyframes botToTop {
+    from{
+        transform: translateY(80%) scale(0,0);
+    }
+    to{
+        transform: translateY(0) scale(1,1);
+        opacity: 1;
+    }
+}
+/* hero-section ends */
+
+.up-icon{
+    position: sticky;
+    padding: 10px;
+    color: white;
+    background-color: var(--primary);
+    border-radius: 10px;
+    
+}
+
+/* Header Section Starts */
+.navbar a:hover{
+    cursor: pointer;
+    color: var(--primary) !important;
+}
+.active{
+    color: var(--primary) !important;
+}
+.dropdown:hover > .drop-btn{
+    color: var(--primary);
+}
+.dropend:hover > .drop-btn{
+    color: var(--primary);
+}
+.dropdown-menu{
+    display: none;
+}
+.dropdown:hover > .dropdown-menu{
+    display: block;
+    animation: bottomToTop 0.5s linear;
+}
+.dropend:hover > .dropdown-menu{
+    display: block;
+    animation: rightToLeft 0.5s linear;
+}
+/* Header Section Ends */
+
+/* About Section Starts */
+.about ul li{
+    display: flex;
+}
+.about ul li i{
+    color: var(--primary);
+    margin: 4px 10px;
+    display: inline-block;
+    font-size: 16px;
+}
+.about .img-container{
+    box-shadow: 0 0 5px grey;
+}
+/* About Section  Ends */
+
+/* Services Section Starts */
+.services .box{
+    display: flex;
+}
+.services .box .box-icon i{
+    color: var(--primary);
+    font-size: 2.4rem;
+    width: 38px;
+    height: 38px;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+.services .box-text p{
+    color: grey;
+}
+/* Services Section Ends */
+
+/* Featured Section Starts */
+.featured li , .featured a{
+    background-color: white !important;
+    color: black !important;
+    display: block;
+    width: 100%;
+}
+.featured li:hover{
+    cursor: pointer
+}
+.featured li:hover h5{
+    color: var(--primary);
+}
+.featured ul li .active{
+    background-color: white;
+    color: black;
+    transition: 0.5s;
+    box-shadow: 0 0 5px grey;
+}
+.featured ul li .active h5{
+    color: var(--primary);
+}
+.featured ul li p{
+    font-weight: lighter;
+}
+/* Featured Section  Ends */
+
+/* Choose Us Section Starts */
+.choose{
+    background-color: whitesmoke;
+}
+.choose > div > div > p{
+    color: gray;
+}
+.choose .video-box{
+    background-image: url("/images/why-us.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.choose .video-box a{
+    width: 30px;
+    height: 30px;
+}
+.choose .video-box a i{
+    color: white;
+    background-color: var(--primary);
+    padding: 2rem;
+    font-size: 2rem;
+    border-radius: 50%;
+    animation: effects 0.8s ease;
+    animation-iteration-count: infinite;
+    border: 5px solid var(--primary);
+    opacity: 1;
+}
+.choose .accordion h2 button{
+    color: black;
+}
+.choose .accordion h2 span{
+    color: var(--primary);
+}
+.choose .accordion h2 button:hover{
+    color: var(--primary);
+    outline: none !important;
+    border: none !important;
+    box-shadow: none;
+    transition: none;
+}
+.choose .accordion button:not(.collapsed){
+    color: var(--primary);
+    background-color: white !important;
+    
+}
+@keyframes effects {
+    from{
+        border: 5px solid rgb(183, 238, 183);
+        opacity: 0.5;
+
+    }
+    to{
+        border: 10px solid rgb(206, 249, 206);
+        opacity: 1;
+        outline: 2px solid var(--primary);
+    }
+}
+/* Choose Us Section Ends */
+
+/* Portfolio Section Starts */
+.portfolio ul li{
+    color: black;
+    background-color: rgb(221, 217, 217);
+    margin: 5px;
+}
+.portfolio ul li:hover{
+    background-color: var(--primary);
+}
+.portfolio ul li:hover button{
+    color: white !important;
+}
+.portfolio ul li button{
+    color: black !important;
+}
+.portfolio ul li .active .portfolio ul li{
+    color: white;
+    background-color: var(--primary);
+}
+.portfolio .nav-pills .nav-link.active{
+    background-color: var(--primary) !important;
+}
+.portfolio .img-box{
+    position: relative;
+}
+.portfolio .img-box:hover::before{
+    display: block;
+    content: "";
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 35px;
+    left: 35px;
+    border-top: 3px solid rgb(255, 255, 255);
+    border-left: 3px solid rgb(255, 255, 255);
+    transition: all 0.5s ease 0s;
+    z-index: 2;
+}
+.portfolio .img-box:hover::after{
+    display: block;
+    content: "";
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    bottom: 35px;
+    right: 35px;
+    border-bottom: 3px solid rgb(255, 255, 255);
+    border-right: 3px solid rgb(255, 255, 255);
+    transition: all 0.5s ease 0s;
+    z-index: 2;
+}
+.portfolio .img-box-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    display: none;
+}
+.portfolio .img-box:hover .img-box-content{
+    display: block;
+}
+.portfolio .img-box:hover img{
+    filter: blur(2px) brightness(60%);
+}
+/* Portfolio Sections Ends */
+
+/* Carousel Section Starts */
+.carousel-section{
+    background-image: url(/images/testimonials-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 10px;
+    position: relative;
+}
+.carousel-inner{
+    text-align: center;
+}
+.carousel-inner i{
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 2rem;
+    background-color: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+.carousel-inner .person-detail{
+    color: white;
+}
+.carousel-inner .person-detail img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+.carousel-item p{
+    margin-top: 20px;
+    color: white;
+}
+.carousel-indicators{
+    position: absolute;
+    bottom: -48px;
+}
+.carousel-indicators button{
+    border-radius: 50%;
+    height: 18px !important;
+    width: 16px !important;
+}
+/* Carousel Section Ends */
+
+/* CLient Section Starts */
+.client{
+    background-color: #ddd;
+}
+.client img{
+    width: 100px;
+    filter: grayscale(100%);
+    vertical-align: middle;
+}
+.client img:hover{
+    filter: grayscale(0);
+    transition: 0.5s;
+    transform: scale(1.5,1.5);
+}
+/* Client Section Ends */
+
+/* Team Section Starts */
+.team .card{
+    border: none;
+}
+.team .card .card-body{
+    padding: 0;
+}
+.team .card .img-box{
+    position: relative;
+}
+.team .card .img-box .icons{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    background-color: var(--primary);
+    padding: 10px;
+    text-align: center;
+    opacity: 0.8;
+    display: none;
+}
+.team .card .img-box i{
+    margin: 0 10px;
+}
+.team .card:hover .img-box .icons{
+    animation: botToTop1 0.5s;
+    display: block;
+}
+.team .card .card-body h6{
+    color: var(--primary);
+    font-weight: 400;
+    font-size: 14px;
+}
+.team .card .card-text{
+    color: gray;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 25px;
+    font-style: italic;
+}
+@keyframes botToTop1 {
+    from{
+        padding: 0;
+    }
+    to{
+        padding: 10px;
+    }
+}
+/* Team Section Ends */
+
+/* Pricing Section Starts */
+.pricing .card{
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    height: 100%;
+}
+.pricing .card .card-body h4{
+    font-weight: bolder;
+}
+.pricing .card ul li{
+    margin: 10px 0;
+}
+.pricing .card.business{
+    border: 1px solid rgb(48, 238, 48);
+    border-radius: 10px;
+}
+.pricing del{
+    color: gray;
+}
+.pricing .card.business h6{
+    display: inline-block;
+    padding: 0 10px;
+    background-color: var(--primary);
+    border-radius: 10px;
+}
+/* Pricing Section Ends */
+
+/* Contact Section Starts */
+.contact{
+    background-color: whitesmoke;
+}
+.contact .box{
+    display: flex;
+    margin: 10px 0;
+}
+.contact .detail{
+    background-color: white;
+    border-radius: 10px;
+}
+.contact .form-type{
+    background-color: white;
+    border-radius: 10px;
+}
+.contact .box .box-icon i{
+    padding: 10px;
+    color: black;
+    background-color: var(--primary);
+    border-radius: 50%;
+    margin-right: 10px;
+    font-size: 1.5rem;
+    width: 44px;
+    height: 44px;
+    text-align: center;
+}
+/* Contact Section Ends */
+
+/* Footer Section Starts */
+footer{
+    position: relative;
+    background: url(footer-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+footer::before{
+    content: "";
+    position: absolute;
+    inset: 0px;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 0;
+}
+.footer div{
+    position: relative;
+}
+.footer .footer-content{
+    color: white;
+    position: relative;
+}
+.footer .footer-content .icons {
+    text-align: center;
+}
+.footer .footer-content .icons i{
+ padding: 5px;
+ background-color: var(--primary);
+ color: white;
+ border-radius: 50%;
+ font-size: 1.5rem;
+}
+.footer .footer-bottom{
+    text-align: center;
+    color: white;
+}
+.footer form{
+    display: flex;
+    justify-content: center;
+}
+.footer form .input-group{
+    border-radius: 20px;
+    width: 60%;
+}
+.footer form input{
+    border-radius: 20px;
+}
+.footer form .input-group-text{
+    border-radius: 20px;
+}
+/* Footer Section Ends */
+@keyframes bottomToTop {
+    from{
+        top: 200%;
+    }
+    to{
+        top: 100%;
+    }
+}
+@keyframes rightToLeft {
+    from{
+        right: 80%;
+    }
+    to{
+        right: 100%;
+    }
+}
+@media only screen and (min-width: 992px){
+    .dropend > .dropdown-menu{
+        top: 0;
+        right: 100%;
+    }
+}
+@media only screen and (max-width: 992px){
+    /* header starts */
+    .dropend > .dropdown-menu{
+        top: 0;
+        right: 100%;
+    }
+    /* header ends */
+
+    /* services starts */
+    .services > div{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    /* services ends */
+
+    /* Choose Us Section Starts */
+    .choose > div{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .choose .video-box{
+        width: 100%;
+        height: 400px;
+    }
+}
